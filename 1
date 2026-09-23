@@ -1,0 +1,121 @@
+D:\AHr\Acoustics>C:/Users/localadmin/AppData/Local/Programs/Python/Python311/python.exe d:/AHr/Acoustics/EConMateSense/1-central_control_with_inference.py
+Initializing log file...
+Connecting to robot...
+ROB_INF: path: RobotInterfaceDotNet
+ROB_INF: getcwd: D:\AHr\Acoustics
+ROB_INF: connecting to 192.168.1.100
+RobotInterface connected
+Robot connected.
+Initial Force[2]: 143.42
+
+Central control with inference is running.
+Waiting for pre-position flag...
+Flag group: 5, Flag index: 0
+
+[TRIGGER] Pre-position flag detected.
+Flag value: 1
+Force Z: 142.77
+
+==================================================
+ONLINE DETECTION CYCLE STARTED
+Time: 2026-09-23 16:44:09
+Force Z at trigger: 142.77
+Recording index: 002
+==================================================
+
+----------------------------------------
+Starting 2-record_signal_two_channel.py
+Script: D:\AHr\Acoustics\EConMateSense\2-record_signal_two_channel.py
+Force monitoring started.
+----------------------------------------
+Initial Force[2] at Flag 5: 142.77
+[STRUCT] Opening stream on device 1...
+[AIR] Opening stream on device 2...
+Both streams are ready. Starting recording...
+[STRUCT] Recording started...
+[AIR] Recording started...
+Force[2]: 142.98
+Force change: 0.22
+Force[2]: 142.87
+Force change: -0.12
+Force[2]: 142.88
+Force change: 0.01
+Force[2]: 142.83
+Force change: -0.05
+Force[2]: 142.78
+Force change: -0.05
+Force[2]: 142.71
+Force change: -0.07
+Force[2]: 141.29
+Force change: -1.42
+Force[2]: 141.49
+Force change: 0.21
+Force[2]: 141.53
+Force change: 0.04
+Force[2]: 140.56
+Force change: -0.97
+Force[2]: 137.15
+Force change: -3.41
+======================================
+FORCE DROP DETECTED
+Previous Force[2]: 140.56
+Current Force[2]: 137.15
+Force Change: -3.41
+[LOG] Force event logged. Force Z: 137.15
+======================================
+Force[2]: 139.11
+Force change: 1.96
+Force[2]: 138.39
+Force change: -0.72
+Force[2]: 138.21
+Force change: -0.19
+Force[2]: 138.24
+Force change: 0.03
+Force[2]: 137.95
+Force change: -0.28
+Force[2]: 138.02
+Force change: 0.07
+[STRUCT] Saved: data\recordings\structure_borne\002_struct_online.wav
+[AIR] Saved: data\recordings\airborne\002_air_online.wav
+[INFO] Latest recording info saved to: data\recordings\latest_recording.json
+Done. Two-channel recording completed successfully.
+Force[2]: 137.95
+Force change: -0.07
+
+----------------------------------------
+Force figure saved: D:\AHr\Acoustics\data\recording\force figure\002_force.png
+Force samples: 19
+----------------------------------------
+5-second force recording finished.
+Force display stopped.
+----------------------------------------
+2-record_signal_two_channel.py finished successfully.
+----------------------------------------
+
+----------------------------------------
+Starting 3-two_channel_inference.py
+Script: D:\AHr\Acoustics\EConMateSense\3-two_channel_inference.py
+----------------------------------------
+Using device: cpu
+Traceback (most recent call last):
+  File "D:\AHr\Acoustics\EConMateSense\3-two_channel_inference.py", line 537, in <module>
+    main()
+  File "D:\AHr\Acoustics\EConMateSense\3-two_channel_inference.py", line 459, in main
+    recording_info, air_wav_path, struct_wav_path = load_latest_recording(
+                                                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\AHr\Acoustics\EConMateSense\3-two_channel_inference.py", line 122, in load_latest_recording
+    raise FileNotFoundError(f"latest_recording.json not found: {json_path}")
+FileNotFoundError: latest_recording.json not found: D:\Acoustics\data\recordings\latest_recording.json
+----------------------------------------
+[ERROR] 3-two_channel_inference.py failed.
+Return code: 1
+----------------------------------------
+[ERROR] Inference failed.
+
+Waiting for flag reset before next cycle...
+
+[RESET] Pre-position flag reset.
+System armed for next detection cycle.
+
+Program manually terminated.
+Central control stopped.
