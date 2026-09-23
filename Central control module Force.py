@@ -21,7 +21,7 @@ FORCE_SAMPLE_INTERVAL = 0.01
 FORCE_RECORD_DURATION = 5.0
 
 FORCE_FIGURE_DIR = (
-    r"D:\AHr\Acoustic\data\recording\force figure"
+    r"D:\AHr\Acoustics\data\recording\force figure"
 )
 
 os.makedirs(
